@@ -1,0 +1,107 @@
+.codeBlock {
+  margin: 8px 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--code-border);
+  background: var(--code-bg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--code-border);
+}
+
+.language {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: lowercase;
+}
+
+.copyBtn {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  transition: all 200ms ease;
+}
+
+.copyBtn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.copied {
+  color: var(--accent-teal);
+}
+
+.pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  white-space: pre;
+  tab-size: 4;
+}
+
+.pre code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Prism overrides */
+.pre :global(.token.keyword) {
+  color: #ff7b72;
+}
+
+.pre :global(.token.string) {
+  color: #a5d6ff;
+}
+
+.pre :global(.token.comment) {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.pre :global(.token.number) {
+  color: #79c0ff;
+}
+
+.pre :global(.token.function) {
+  color: #d2a8ff;
+}
+
+.pre :global(.token.class-name) {
+  color: #ffa657;
+}
+
+.pre :global(.token.boolean) {
+  color: #79c0ff;
+}
+
+.pre :global(.token.operator) {
+  color: #ff7b72;
+}
+
+.pre :global(.token.punctuation) {
+  color: #c9d1d9;
+}
+
+.pre :global(.token.annotation) {
+  color: #ffa657;
+}
+
+@media (max-width: 768px) {
+  .pre {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}
