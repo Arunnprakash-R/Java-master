@@ -156,6 +156,7 @@
   border-top: 1px solid var(--border);
   background: rgba(12, 16, 24, 0.9);
   flex-shrink: 0;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
 }
 
 .inputWrapper {
@@ -254,6 +255,7 @@
 
   .inputBar {
     padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
   }
 
   .textarea {

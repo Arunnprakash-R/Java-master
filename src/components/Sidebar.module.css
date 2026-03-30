@@ -274,14 +274,14 @@
     top: 0;
     left: 0;
     z-index: 100;
-    width: 280px;
+    width: min(280px, 86vw);
     animation: slideInLeft 300ms ease;
     box-shadow: var(--shadow-elevated);
   }
 
   .collapsed {
     transform: translateX(-100%);
-    width: 280px;
+    width: min(280px, 86vw);
   }
 
   .closeBtn {

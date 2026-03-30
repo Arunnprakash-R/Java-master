@@ -108,14 +108,19 @@ export default function App() {
           </button>
           <span className={styles.topBarTitle}>
             <span className={styles.topBarTitleAccent}>JavaMaster</span>
-            {isQuestionBank && ' — Question Bank'}
-            {activeTopic && !isQuestionBank && (
-              <> — {activeUnit?.title} › {activeTopic.title}</>
-            )}
+            <span className={styles.topBarCrumb}>
+              {isQuestionBank && ' — Question Bank'}
+              {activeTopic && !isQuestionBank && (
+                <> — {activeUnit?.title} › {activeTopic.title}</>
+              )}
+            </span>
           </span>
           <div className={styles.topBarBadges}>
             <span className={styles.badge}>5 Units · 36 Topics</span>
-            <span className={styles.badgeSuccess}>Offline-ready</span>
+            <span className={styles.badgeSuccess}>
+              <span className={styles.badgeTextLong}>Offline-ready</span>
+              <span className={styles.badgeTextShort}>Offline</span>
+            </span>
           </div>
         </div>
 

@@ -188,7 +188,8 @@ export default function StaticTopicView({ unit, topic, onGoHome, onToggleComplet
     <div className={styles.wrapper}>
       <div className={styles.topBar}>
         <button className={styles.backBtn} onClick={onGoHome} aria-label="Back">
-          ← Back
+          <span className={styles.btnLong}>← Back</span>
+          <span className={styles.btnShort}>←</span>
         </button>
         <div className={styles.meta}>
           <span className={styles.metaUnit}>{unit?.title}</span>
@@ -198,7 +199,17 @@ export default function StaticTopicView({ unit, topic, onGoHome, onToggleComplet
           className={`${styles.completeBtn} ${isCompleted ? styles.completeBtnDone : ''}`}
           onClick={() => onToggleComplete(topic.id)}
         >
-          {isCompleted ? '✓ Completed' : 'Mark Complete'}
+          {isCompleted ? (
+            <>
+              <span className={styles.btnLong}>✓ Completed</span>
+              <span className={styles.btnShort}>✓</span>
+            </>
+          ) : (
+            <>
+              <span className={styles.btnLong}>Mark Complete</span>
+              <span className={styles.btnShort}>Done</span>
+            </>
+          )}
         </button>
       </div>
 
