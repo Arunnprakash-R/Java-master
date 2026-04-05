@@ -42,25 +42,29 @@ export default function QuestionBankView() {
       </header>
 
       <div className={styles.grid}>
-        {PDF_LINKS.map((pdf) => (
-          <article key={pdf.title} className={styles.card}>
-            <div className={styles.cardTop}>
-              <div className={styles.cardIcon}>📄</div>
-              <div>
-                <h2 className={styles.cardTitle}>{pdf.title}</h2>
-                <p className={styles.cardDesc}>{pdf.description}</p>
+        {PDF_LINKS.map((pdf) => {
+          // ensure the base URL and the file path merge cleanly
+          const pdfPath = `${import.meta.env.BASE_URL}${pdf.file.replace(/^\//, '')}`;
+          return (
+            <article key={pdf.title} className={styles.card}>
+              <div className={styles.cardTop}>
+                <div className={styles.cardIcon}>📄</div>
+                <div>
+                  <h2 className={styles.cardTitle}>{pdf.title}</h2>
+                  <p className={styles.cardDesc}>{pdf.description}</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.cardActions}>
-              <a className={styles.primaryBtn} href={pdf.file} target="_blank" rel="noreferrer">
-                Open PDF
-              </a>
-              <a className={styles.secondaryBtn} href={pdf.file} download>
-                Download
-              </a>
-            </div>
-          </article>
-        ))}
+              <div className={styles.cardActions}>
+                <a className={styles.primaryBtn} href={pdfPath} target="_blank" rel="noreferrer">
+                  Open PDF
+                </a>
+                <a className={styles.secondaryBtn} href={pdfPath} download>
+                  Download
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </div>
   );
