@@ -1,122 +1,100 @@
 :root {
-  --bg-primary: radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.12), transparent 25%),
-    radial-gradient(circle at 80% 0%, rgba(78, 205, 196, 0.12), transparent 22%),
-    #090c12;
-  --bg-secondary: rgba(16, 22, 30, 0.82);
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --bg-card-hover: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(255, 107, 53, 0.3);
-  --text-primary: #eaf1f9;
-  --text-secondary: #9aa6b7;
-  --text-muted: #5c6675;
-  --accent-orange: #ff7a3d;
-  --accent-teal: #4dd3c9;
-  --accent-blue: #3ca0f6;
-  --accent-purple: #a855f7;
-  --accent-red: #ef4444;
-  --code-bg: #0e141c;
-  --code-border: #243143;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-code: 'Fira Code', monospace;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-full: 50%;
-  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.35);
-  --shadow-elevated: 0 16px 60px rgba(0, 0, 0, 0.45);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(255, 196, 92, 0.22), transparent 26%),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 22%),
+    linear-gradient(180deg, #fffdf8 0%, #f4f8ff 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: var(--font-display);
-  font-weight: 400;
-  color: var(--text-primary);
-  background: var(--bg-primary);
-  line-height: 1.6;
-  overflow: hidden;
-  height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
+html,
+body,
 #root {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 196, 92, 0.22), transparent 26%),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 22%),
+    linear-gradient(180deg, #fffdf8 0%, #f4f8ff 100%);
+  color: #0f172a;
+  position: relative;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 a {
-  color: var(--accent-blue);
-  text-decoration: none;
+  color: inherit;
 }
 
-button {
-  font-family: var(--font-display);
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: none;
-  color: var(--text-primary);
-}
-
-button:focus-visible {
-  outline: 2px solid var(--accent-orange);
-  outline-offset: 2px;
-}
-
-textarea,
-input {
-  font-family: var(--font-display);
-  color: var(--text-primary);
-  background: none;
-  border: none;
-  outline: none;
-}
-
-textarea:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--accent-orange);
-  outline-offset: 2px;
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 3px;
+  background: rgba(100, 116, 139, 0.38);
+  border-radius: 999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.72);
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::selection {
+  background: rgba(255, 122, 24, 0.18);
+  color: #0f172a;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 42% 58% 39% 61% / 58% 44% 56% 42%;
+}
+
+body::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -100px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 196, 92, 0.22), rgba(255, 255, 255, 0));
+}
+
+body::after {
+  width: 320px;
+  height: 320px;
+  left: -120px;
+  bottom: 8%;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.16), rgba(255, 255, 255, 0));
 }
 
 @keyframes fadeIn {
